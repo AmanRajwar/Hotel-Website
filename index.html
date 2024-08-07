@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curved Text with CSS Transformations</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #333;
+            margin: 0;
+        }
+
+        .curved-text {
+            position: relative;
+            width: 300px;  /* Adjust the size as needed */
+            height: 150px;  /* Adjust the size as needed */
+        }
+
+        .curved-text span {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform-origin: bottom center;
+            color: white;
+            font-size: 24px;  /* Adjust font size as needed */
+            font-family: 'Arial', sans-serif;
+        }
+
+        .curved-text span:nth-child(1)  { transform: rotate(-60deg) translateX(-150px); }
+        .curved-text span:nth-child(2)  { transform: rotate(-45deg) translateX(-150px); }
+        .curved-text span:nth-child(3)  { transform: rotate(-30deg) translateX(-150px); }
+        .curved-text span:nth-child(4)  { transform: rotate(-15deg) translateX(-150px); }
+        .curved-text span:nth-child(5)  { transform: rotate(0deg) translateX(-150px); }
+        .curved-text span:nth-child(6)  { transform: rotate(15deg) translateX(-150px); }
+        .curved-text span:nth-child(7)  { transform: rotate(30deg) translateX(-150px); }
+        .curved-text span:nth-child(8)  { transform: rotate(45deg) translateX(-150px); }
+        .curved-text span:nth-child(9)  { transform: rotate(60deg) translateX(-150px); }
+    </style>
+</head>
+<body>
+    <div class="curved-text">
+        <span>O</span>
+        <span>n</span>
+        <span>l</span>
+        <span>y</span>
+        <span> </span>
+        <span>t</span>
+        <span>h</span>
+        <span>e</span>
+        <span> </span>
+        <span>b</span>
+        <span>e</span>
+        <span>s</span>
+        <span>t</span>
+    </div>
+</body>
+</html>
