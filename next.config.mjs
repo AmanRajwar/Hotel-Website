@@ -8,7 +8,10 @@ const nextConfig = {
         });
     
         return config;
-      }
+      },
+      experimental: {
+        optimizeFonts: true,
+      },
 };
 
 export default nextConfig;
