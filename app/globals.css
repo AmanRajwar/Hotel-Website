@@ -102,6 +102,11 @@ body {
   mix-blend-mode: multiply;
   background-image: url('/images/lines.png')
 }
+.lines2{
+  opacity: 0.8;
+  mix-blend-mode: multiply;
+  background-image: url('/images/lines.png')
+}
 
 .gradient {
   background: rgb(10, 15, 22);
@@ -112,6 +117,9 @@ body {
   -webkit-box-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.57);
   -moz-box-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.57);
   box-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.57);
+}
+.shadow2{
+  text-shadow: 5px 3px 6px rgba(0,0,0,0.57);
 }
 
 .gradient1 {

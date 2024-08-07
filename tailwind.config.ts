@@ -92,7 +92,7 @@ const config = {
       },
       backgroundImage: {
         hero: "url('/images/mountain3.JPG')",
-        layer: "url('/images/layers.svg')"
+        layer: "url('/images/layers.svg')",
       },
       fontFamily: {
         1: ["Bebas Neue", 'sans-serif'],

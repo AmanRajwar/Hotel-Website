@@ -2,13 +2,9 @@ import { Star } from 'lucide-react'
 import Image from 'next/image'
 import React, { FC } from 'react'
 import { cn } from "@/lib/utils"
-import localFont from 'next/font/local'
 
-const gambetta = localFont({ src: '/fonts/Gambetta-Regular.woff' })
 
-const Gambetta = gambetta({
-    variable: '--font-gambetta',
-  })
+
 
 
 interface Props {
@@ -17,10 +13,10 @@ interface Props {
 
 const Card:FC<Props> = ({className , ...props}) => {
     return (
-        <div className={cn(`rounded-sm border p-[20px] h-[250px] w-[500px] text-black bg-white overflow-hidden shadow1 ${gambetta.className} `,className)}>
+        <div className={cn(`rounded-sm  p-[20px] h-[250px] w-[500px] max-sm:w-[350px] max-sm:h-[200px]  text-black bg-white overflow-hidden shadow1 `,className)}>
             <div className='  w-full items-center flex justify-between '>
 
-                <div className='flex items-center w-[50px] h-[50px]  rounded-[100%] overflow-hidden'>
+                <div className=' flex items-center w-[50px] h-[50px]  rounded-[100%] overflow-hidden'>
 
                     <Image
                         className=' size-full object-cover '
@@ -29,8 +25,8 @@ const Card:FC<Props> = ({className , ...props}) => {
                         height={200}
                         alt='image'
                     />
-                </div>
-                <h1 className=' -ml-9 w-[200px]'> Name</h1>
+                </div> 
+                <h1 className=' max-sm:ml-2 -ml-12 w-[200px] max-sm:w-[150px] font-3 font-extrabold text-lg truncate'> Aman Rajwar</h1>
                 <div>
 
                     <div className='flex'>
@@ -42,12 +38,12 @@ const Card:FC<Props> = ({className , ...props}) => {
                         <Star className=' size-5 border-none fill-golden-1 ' color='#ffcf40' width={10} height={10} />
 
                     </div>
-                    <p> 20 days ago</p>
+                    <p className='mt-2 text-slate-600'> 20 days ago</p>
                 </div>
             </div>
             <div className=' mt-[20px] w-full h-[100px] overflow-hidden'>
 
-                <p className=' text-wrap truncate '>
+                <p className='text-slate-600 text-wrap truncate '>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sit amet turpis lacinia, laoreet ligula eu, laoreet lorem. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Aliquam nec pulvinar sem. Vivamus ac ullamcorper magna, quis tempor elit.
                 </p>
             </div>

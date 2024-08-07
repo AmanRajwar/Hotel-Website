@@ -76,58 +76,57 @@ const ViewSection = () => {
             stagger: -0.1,
         });
     }
-
+    let isAnimating = false;
     useEffect(() => {
         const customEase = CustomEase.create('cubic', '0.83, 0, 0.17, 1');
-        let isAnimating = false;
 
             splitTextIntoSpans(".copy h1");
             initializeCards();
 
             gsap.set("h1 span", { y: -200 });
             gsap.set(".slider .card:last-child h1 span", { y: 0 });
-     
 
-        document.addEventListener("click", function () {
-            if (isAnimating) return;
-            // isAnimating = true;
-
-            let slider = document.querySelector(".slider");
-            if(!slider)return
-            let cards = Array.from(slider.querySelectorAll(".card"));
-            let lastCard = cards.pop();
-            if(!lastCard)return
-            let nextCard = cards[cards.length - 1];
-
-            gsap.to(lastCard.querySelectorAll("h1 span"), {
-                y: 200,
-                duration: 0.75,
-                ease: 'cubic',
-            });
-
-            gsap.to(lastCard, {
-                y: '+=150%',
-                duration: 0.75,
-                ease: 'cubic',
-                onComplete: () => {
-                    slider.prepend(lastCard);
-                    initializeCards();
-                    gsap.set(lastCard.querySelectorAll('h1 span'), { y: -200 });
-                    setTimeout(() => {
-                        isAnimating = false;
-                    }, 1000);
-                }
-            });
-
-            gsap.to(nextCard.querySelectorAll('h1 span'), {
-                y: 0,
-                duration: 1,
-                ease: 'cubic',
-                stagger: 0.05,
-            });
-        });
 
     }, []);
+
+    function handleClick () {
+        if (isAnimating) return;
+        // isAnimating = true;
+
+        let slider = document.querySelector(".slider");
+        if(!slider)return
+        let cards = Array.from(slider.querySelectorAll(".card"));
+        let lastCard = cards.pop();
+        if(!lastCard)return
+        let nextCard = cards[cards.length - 1];
+
+        gsap.to(lastCard.querySelectorAll("h1 span"), {
+            y: 200,
+            duration: 0.75,
+            ease: 'cubic',
+        });
+
+        gsap.to(lastCard, {
+            y: '+=150%',
+            duration: 0.75,
+            ease: 'cubic',
+            onComplete: () => {
+                slider.prepend(lastCard);
+                initializeCards();
+                gsap.set(lastCard.querySelectorAll('h1 span'), { y: -200 });
+                setTimeout(() => {
+                    isAnimating = false;
+                }, 1000);
+            }
+        });
+
+        gsap.to(nextCard.querySelectorAll('h1 span'), {
+            y: 0,
+            duration: 1,
+            ease: 'cubic',
+            stagger: 0.05,
+        });
+    }
 
     return (
         <section className=' relative w-full h-[100vh] bg-blue-1 text-white  '>
@@ -136,6 +135,7 @@ const ViewSection = () => {
                     {images.map((image, index:any) => (
                         <div  className='card absolute top-[15%] left-[10%] w-[80%] h-[650px] rounded-[10px] overflow-hidden transform transform-3d bg-black'>
                             <Image
+                            onClick={handleClick}
                                 className='size-full object-cover opacity-[0.8]'
                                 src={image.imgUrl}
                                 width={1000}
