@@ -9,6 +9,10 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  
+}
+*::-webkit-scrollbar{
+  display: none;
 }
 
 @layer base {
@@ -103,9 +107,9 @@ body {
   background-image: url('/images/lines.png')
 }
 .lines2{
-  opacity: 0.8;
-  mix-blend-mode: multiply;
-  background-image: url('/images/lines.png')
+  opacity: 0.3;
+  mix-blend-mode: darken;
+  background-image: url('/images/lines3.jpg')
 }
 
 .gradient {
@@ -131,6 +135,13 @@ body {
   background: -ms-linear-gradient(-45deg, rgba(102, 97, 102, 1) 0%, rgba(40, 36, 40, 1) 100%);
   background: linear-gradient(135deg, rgba(102, 97, 102, 1) 0%, rgba(40, 36, 40, 1) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#666166', endColorstr='#282428', GradientType=1);
+}
+
+.active-card{
+  position: relative;
+  transform:scale(1.1);
+  z-index: 99999999;
+  
 }
 
 @layer base {
