@@ -1,5 +1,5 @@
 'use client'
-import React, { useEffect, useRef,useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Button } from './ui/button'
 import Card from './ui/card'
 
@@ -7,23 +7,23 @@ const ReviewSection = () => {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const items = ['Item 1', 'Item 2', 'Item 3'];
   const currentIndex = useRef(0);
-  const [index,setIndex] =useState(0);
+  const [index, setIndex] = useState(0);
 
   useEffect(() => {
     const scrollContainer = scrollContainerRef.current;
 
     const scrollItems = () => {
       if (scrollContainer) {
-        currentIndex.current = (currentIndex.current + 1 ) % items.length;
+        currentIndex.current = (currentIndex.current + 1) % items.length;
         setIndex(currentIndex.current)
-        const child = scrollContainer.children[currentIndex.current ] as HTMLDivElement;
-        const scrollOffset = child.offsetWidth / 2; 
-        let offset:any;
+        const child = scrollContainer.children[currentIndex.current] as HTMLDivElement;
+        const scrollOffset = child.offsetWidth / 2;
+        let offset: any;
         console.log(child.offsetWidth)
-        if(child.offsetWidth == 500 ){
-          offset = child.offsetLeft -250;
-        }else{
-          offset=child.offsetLeft -50;
+        if (child.offsetWidth == 500) {
+          offset = child.offsetLeft - 250;
+        } else {
+          offset = child.offsetLeft - 50;
         }
         scrollContainer.scrollTo({
           left: offset,
@@ -53,8 +53,8 @@ const ReviewSection = () => {
         </Button>
 
       </div>
-      <div   ref={scrollContainerRef} className='overflow-auto w-[40%] max-sm:w-full max-xl:mb-[80px] xl:mr-[50px]  2xl:mr-[100px] flex gap-8 xl:gap-10 xl:flex-col xl:justify-center items-center xl:items-end h-[42%] xl:h-full px-[40px] max-xl:w-[94%] z-0  '>
-       <Card className={`max-xl:ml-[20px] flex-shrink-0 transition-transform duration-1000 ease-in-out ${index == 0 ? 'active-card' : ''}`} />
+      <div ref={scrollContainerRef} className='overflow-auto w-[40%] max-sm:w-full max-xl:mb-[80px] xl:mr-[50px]  2xl:mr-[100px] flex gap-8 xl:gap-10 xl:flex-col xl:justify-center items-center xl:items-end h-[42%] xl:h-full px-[40px] max-xl:w-[94%] z-0  '>
+        <Card className={`max-xl:ml-[20px] flex-shrink-0 transition-transform duration-1000 ease-in-out ${index == 0 ? 'active-card' : ''}`} />
         <Card className={` 2xl:mr-[100px] xl:mr-[50px] flex-shrink-0 transition transform duration-1000 ease-in-out   ${index == 1 ? 'active-card' : ''} `} />
         <Card className={` max-xl:mr-[20px] flex-shrink-0 transition-transform duration-1000  ease-in-out ${index == 2 ? 'active-card' : ' '}`} />
       </div>

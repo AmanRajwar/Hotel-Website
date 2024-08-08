@@ -4,7 +4,6 @@ import { BookCheck } from "lucide-react";
 // import Layers from "@/public/images/Layers";
 const Home = () => {
 
-
   return (
     <section className=" relative h-[100vh]  size-full flex-col gap-5 text-black bg-hero  bg-cover bg-center bg-no-repeat">
       <div className="text-slate-100 relative h-[100vh] w-full flex flex-col items-center justify-center ">
@@ -20,7 +19,7 @@ const Home = () => {
 
         </div>
         <div className=" z-10 flex flex-col items-center justify-center absolute bottom-0 w-[33%] max-lg:w-[90%] lg:w-[50%] mb-10">
-          
+
           <p className="text-center font-3  tracking-widest font-light mb-10 max-sm:text-sm ">
             Nestled in the heart of the hills, our homestay offers an unparalleled escape into the breathtaking beauty of nature, where lush greenery, towering trees, and starlit skies create a serene and picturesque retreat.
           </p>
