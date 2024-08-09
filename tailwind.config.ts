@@ -18,6 +18,12 @@ const config = {
       },
     },
     extend: {
+      height:{
+'custom':'calc(100% - 80px)',
+      },
+      width:{
+'custom':'calc(100% - 150px)',
+      },
       colors: {
         green: {
           1: '#054c1d',

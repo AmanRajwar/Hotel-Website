@@ -2,6 +2,7 @@ import ViewSection from "@/components/ViewSection"
 import { ReactNode } from "react"
 import ReviewSection from "@/components/ReviewSection"
 import AboutSection from "@/components/AboutSection"
+import ContactSection from "@/components/ContactSection"
 
 const RootLayout = ({ children }: { children: ReactNode }) => {
     return (
@@ -10,6 +11,7 @@ const RootLayout = ({ children }: { children: ReactNode }) => {
             <ViewSection/>    
             <ReviewSection/>
             <AboutSection/>  
+            <ContactSection/>
             {/* <ViewSection/> */}
         </main>
     )
