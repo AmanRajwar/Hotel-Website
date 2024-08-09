@@ -156,13 +156,13 @@ body {
   position: absolute;
   width: 50%;
   height: 100%;
-  background: #292529 ;
+  background: #292529;
   top: 0;
   left: 0;
-  backdrop-filter: blur(10px) 
-
+  backdrop-filter: blur(10px)
 }
-.labels{
+
+.labels {
   position: absolute;
   left: 0;
   padding: 5px 0;
@@ -174,17 +174,95 @@ body {
 }
 
 input:focus~span,
-input:valid ~ span,
-textarea:focus ~ span,
-textarea:valid ~ span
-{
-  transform:translateY(-22px);
+input:valid~span,
+textarea:focus~span,
+textarea:valid~span {
+  transform: translateY(-22px);
   font-size: 15px;
   letter-spacing: 1px;
   font-weight: 500;
   color: black;
 
 }
+
+@media (max-width : 1200px) {
+
+  .contactContainer {
+    width: 90%;
+    min-width: auto;
+    margin: 20px;
+  }
+
+  .contactInfo {
+    top: 0;
+    height: 750px;
+    position: relative;
+  }
+
+  .contactForm {
+    position: relative;
+    width: calc(100% - 350px);
+    padding: 40px;
+    margin-left: 0;
+    height: auto;
+  }
+
+}
+
+@media (max-width:991px) {
+  .contact-section {
+    background: #292529;
+  }
+
+  .contact-section::before {
+    display: none;
+  }
+
+  .contactContainer {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .contactForm {
+    width: 100%;
+    height: auto;
+  }
+
+  .contactInfo {
+    width: 100%;
+    height: auto;
+  }
+
+}
+
+@media (max-width:600px) {
+  .contact-section {
+    background: #292529;
+  }
+
+  .contact-section::before {
+    display: none;
+  }
+
+  .contactContainer {
+    padding: 0;
+    margin-top: 20px;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .contactForm {
+    width: 100%;
+    height: auto;
+    padding: 20px;
+  }
+
+  .contactInfo {
+    width: 100%;
+    height: auto;
+  }
+}
+
 
 @layer base {
   * {

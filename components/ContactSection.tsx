@@ -4,15 +4,14 @@ import React from 'react'
 import Form from './ui/form';
 
 const ContactSection = () => {
+
   return (
-    <section className=' relative flex justify-center  items-center bg-black w-full  min-h-[90vh] p-[40px] contact-section overflow-hidden'>
+    <section className=' relative flex justify-center  items-center bg-black w-full  min-h-[90vh]  contact-section overflow-hidden'>
 
 
-      <div className=' relative min-w-[1600px] min-h-[750px] flex z-50  '>
-        
+      <div className=' contactContainer relative min-w-[auto] w-[90%] min-h-[750px] flex z-50  '>
 
-        {/* <div className='z-20 bg-black border w-[350px]  absolute left-[100px] top-[160px] bottom-[160px] right-[75%]  px-[40px] py-[50px]'> */}
-        <div className='z-10 absolute top-[40px] w-[350px] bg-black h-custom flex flex-col p-[40px] justify-around '>
+        <div className=' contactInfo z-10 absolute top-[40px] w-[350px] bg-black h-custom flex flex-col p-[40px] justify-around overflow-hidden'>
           <h1 className='text-white mb-[25px] font-3 font-extrabold text-2xl'>Contact Info</h1>
 
           <div className='mb-[20px] flex items-center'>
@@ -49,11 +48,8 @@ const ContactSection = () => {
           </div>
 
         </div>
-        <Form/>
+        <Form />
       </div>
-
-
-
 
     </section>
   )

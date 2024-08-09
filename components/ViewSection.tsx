@@ -78,7 +78,7 @@ const ViewSection = () => {
     }
     let isAnimating = false;
     useEffect(() => {
-        const customEase = CustomEase.create('cubic', '0.83, 0, 0.17, 1');
+        CustomEase.create('cubic', '0.83, 0, 0.17, 1');
 
             splitTextIntoSpans(".copy h1");
             initializeCards();
@@ -133,7 +133,7 @@ const ViewSection = () => {
             <div className=' container w-[100vw] h-[100vh] relative overflow-hidden z-50 '>
                 <div className=' slider relative top-[5vh]  size-full overflow-hidden  perspective'>
                     {images.map((image, index:any) => (
-                        <div  className='card absolute top-[15%] left-[10%] w-[80%] h-[650px] rounded-[10px] overflow-hidden transform transform-3d bg-black'>
+                        <div key={index}  className='card absolute top-[15%] left-[10%] w-[80%] h-[650px] rounded-[10px] overflow-hidden transform transform-3d bg-black'>
                             <Image
                             onClick={handleClick}
                                 className='size-full object-cover opacity-[0.8]'
