@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button"
 import { BookCheck } from "lucide-react";
+import Link from "next/link";
 
 // import Layers from "@/public/images/Layers";
 const Home = () => {
@@ -23,11 +24,12 @@ const Home = () => {
           <p className="text-center font-3  tracking-widest font-light mb-10 max-sm:text-sm ">
             Nestled in the heart of the hills, our homestay offers an unparalleled escape into the breathtaking beauty of nature, where lush greenery, towering trees, and starlit skies create a serene and picturesque retreat.
           </p>
-
-          <Button className="rounded-full bg-white text-slate-900 px-6 py-6 mb-5">
-            <BookCheck className="h-6 "> </BookCheck>
-            <h1 className=" ml-2 text-xl font-bold"> Book now</h1>
-          </Button>
+          <Link href='#contact'>
+            <Button className="rounded-full bg-white text-slate-900 px-6 py-6 mb-5">
+              <BookCheck className="h-6 "> </BookCheck>
+              <h1 className=" ml-2 text-xl font-bold"> Book now</h1>
+            </Button>
+          </Link>
 
           <h1 className=" font-3 font-light   tracking-widest text-lg max-sm:text-base ">Starts at<span className="text-xl max-sm:text-lg font-bold">  $111</span> /night</h1>
         </div>

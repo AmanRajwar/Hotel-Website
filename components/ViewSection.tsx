@@ -48,14 +48,14 @@ gsap.registerPlugin(CustomEase);
 
 const ViewSection = () => {
 
-    function splitTextIntoSpans(selector:any) {
+    function splitTextIntoSpans(selector: any) {
         let elements = document.querySelectorAll(selector);
-        
+
         elements.forEach((element) => {
             let text = element.innerText;
             let splitText = text
                 .split("")
-                .map(function (char:any) {
+                .map(function (char: any) {
                     return `<span>${char === " " ? "&nbsp;&nbsp;" : char}</span>`;
                 })
                 .join("");
@@ -80,24 +80,23 @@ const ViewSection = () => {
     useEffect(() => {
         CustomEase.create('cubic', '0.83, 0, 0.17, 1');
 
-            splitTextIntoSpans(".copy h1");
-            initializeCards();
+        splitTextIntoSpans(".copy h1");
+        initializeCards();
 
-            gsap.set("h1 span", { y: -200 });
-            gsap.set(".slider .card:last-child h1 span", { y: 0 });
+        gsap.set("h1 span", { y: -200 });
+        gsap.set(".slider .card:last-child h1 span", { y: 0 });
 
 
     }, []);
 
-    function handleClick () {
+    function handleClick() {
         if (isAnimating) return;
-        // isAnimating = true;
 
         let slider = document.querySelector(".slider");
-        if(!slider)return
+        if (!slider) return
         let cards = Array.from(slider.querySelectorAll(".card"));
         let lastCard = cards.pop();
-        if(!lastCard)return
+        if (!lastCard) return
         let nextCard = cards[cards.length - 1];
 
         gsap.to(lastCard.querySelectorAll("h1 span"), {
@@ -132,10 +131,10 @@ const ViewSection = () => {
         <section className=' relative w-full h-[100vh] bg-blue-1 text-white  '>
             <div className=' container w-[100vw] h-[100vh] relative overflow-hidden z-50 '>
                 <div className=' slider relative top-[5vh]  size-full overflow-hidden  perspective'>
-                    {images.map((image, index:any) => (
-                        <div key={index}  className='card absolute top-[15%] left-[10%] w-[80%] h-[650px] rounded-[10px] overflow-hidden transform transform-3d bg-black'>
+                    {images.map((image, index: any) => (
+                        <div key={index} className='card absolute top-[15%] left-[10%] w-[80%] h-[650px] rounded-[10px] overflow-hidden transform transform-3d bg-black'>
                             <Image
-                            onClick={handleClick}
+                                onClick={handleClick}
                                 className='size-full object-cover opacity-[0.8]'
                                 src={image.imgUrl}
                                 width={1000}

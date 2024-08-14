@@ -16,3 +16,28 @@ export const images = [
         imgUrl: '/images/preview/review5.jpg'
     }
 ]
+
+
+export const sidebarLinks=[
+    {
+        label:'Home',
+        route:'/',
+    },
+    {
+        label:'Contact US',
+        route:'#contact',
+    },
+    {
+        label:'Reviews',
+        route:'#reviews',
+    },
+    {
+        label:'About Us',
+        route:'#about',
+    },
+    // {
+    //     label:'Personal Room',
+    //     route:'/personal-room',
+    // },
+]
+

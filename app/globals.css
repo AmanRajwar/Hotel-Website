@@ -9,6 +9,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 
 }
 
@@ -183,6 +184,11 @@ textarea:valid~span {
   font-weight: 500;
   color: black;
 
+}
+
+.glassmorphism{
+  background:transparent;
+  backdrop-filter: blur(5px);
 }
 
 @media (max-width : 1200px) {

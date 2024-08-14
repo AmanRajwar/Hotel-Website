@@ -6,7 +6,7 @@ import Form from './ui/form';
 const ContactSection = () => {
 
   return (
-    <section className=' relative flex justify-center  items-center bg-black w-full  min-h-[90vh]  contact-section overflow-hidden'>
+    <section id='contact' className=' relative flex justify-center  items-center bg-black w-full  min-h-[90vh]  contact-section overflow-hidden'>
 
 
       <div className=' contactContainer relative min-w-[auto] w-[90%] min-h-[750px] flex z-50  '>

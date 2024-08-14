@@ -13,16 +13,13 @@ const Form = () => {
     const [loading, setLoading] = useState(false);
 
     const handleSubmit = (e: any) => {
-        if (firstName === '' && lastName === '' && email === '' && message === '') {
+        if (firstName === '' || lastName === '' || email === '' || message === '') {
             toast({
                 title: "Fill Details Properly",
-                variant: "destructive" 
-              })
+                variant: "destructive"
+            })
             return;
         }
-        toast({
-            title: "Sending Email...",
-          })
         e.preventDefault();
         setLoading(true);
 
@@ -36,18 +33,27 @@ const Form = () => {
             to_name: 'Dunagiri HomeStay',
             message: message
         }
+        toast({
+            title: "SENDING EMAIL...",
+        })
 
         // EmailJS send email function
         emailjs.send(serviceId, templateId, templateParams, publicId)
             .then((response) => {
-                console.log('Email sent successfully!', response.status, response.text);
                 setFirstName('');
                 setLastName('');
                 setMessage('');
+                setEmail('');
+                toast({
+                    title: "EMAIL SENT...",
+                })
                 setLoading(false);
             })
             .catch((err) => {
-                console.error('Failed to send email.', err);
+                toast({
+                    title: "Error Sending Email...",
+                    variant: "destructive"
+                })
                 setLoading(false);
             });
     };

@@ -25,6 +25,9 @@ const config = {
 'custom':'calc(100% - 150px)',
       },
       colors: {
+        newWhite:{
+          1:'rgba(255,255,255,0.2)',
+        },
         green: {
           1: '#054c1d',
           2: "#3ccd41"
