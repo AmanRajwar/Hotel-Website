@@ -100,7 +100,7 @@ const config = {
         end: 'end',
       },
       backgroundImage: {
-        hero: "url('/images/mountain3.JPG')",
+        hero: "url('/images/mountain3.jpg')",
         layer: "url('/images/layers.svg')",
       },
       fontFamily: {
